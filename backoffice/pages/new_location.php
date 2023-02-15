@@ -15,15 +15,9 @@
 <?php
   
   include 'session.php';
+  include '../../connection.php';
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $conn = new mysqli($servername, $username, $password,'db_seminar');
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
     $name = $_POST['name'];
     $description = $_POST['description'];
 
@@ -35,14 +29,14 @@
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     // echo "<br>".$imageFileType;
     // Check if image file is a actual image or fake image
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-      // echo "File is an image - " . $check["mime"] . ".";
-      $uploadOk = 1;
-    } else {
-      // echo "File is not an image.";
-      $uploadOk = 0;
-    }
+    // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    // if($check !== false) {
+    //   // echo "File is an image - " . $check["mime"] . ".";
+    //   $uploadOk = 1;
+    // } else {
+    //   // echo "File is not an image.";
+    //   $uploadOk = 0;
+    // }
 
     if ($uploadOk == 0) {
       echo "Sorry, your file was not uploaded.";
