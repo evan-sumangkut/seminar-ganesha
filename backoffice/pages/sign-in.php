@@ -48,7 +48,7 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form action="login.php" method="post" onSubmit="return validasi()" role="form">
+                  <form action="login_check.php" method="post" onSubmit="return validasi()" role="form">
                     <label>Username</label>
                     <div class="mb-3">
                       <input type="text" id="username" name="username" class="form-control" placeholder="Username" aria-label="Email" aria-describedby="email-addon">
